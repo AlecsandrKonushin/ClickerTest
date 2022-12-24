@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using NaughtyAttributes;
 using TMPro;
 using UI.Buttons;
@@ -21,6 +19,8 @@ namespace UI
         [SerializeField] private Button levelUpButton;
 
         [BoxGroup("Down block")] private UpgradeButton[] upgradeButtons;
+
+
 
     }
 }
