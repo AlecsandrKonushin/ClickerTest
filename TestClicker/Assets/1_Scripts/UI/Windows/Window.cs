@@ -29,8 +29,8 @@ namespace UI
         protected virtual void AfterInitialize() { }
         public virtual void OnStart() { }
 
-        public abstract void Show();
-        public abstract void Hide();
+        public virtual void Show() { }
+        public virtual void Hide() { }
         public virtual void Change() { }
 
         public virtual void ChangeLanguage() { }

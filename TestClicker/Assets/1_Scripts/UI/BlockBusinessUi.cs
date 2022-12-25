@@ -21,6 +21,5 @@ namespace UI
         [BoxGroup("Down block")] private UpgradeButton[] upgradeButtons;
 
 
-
     }
 }
