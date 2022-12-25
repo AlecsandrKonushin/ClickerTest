@@ -8,7 +8,7 @@ namespace Business
     [System.Serializable]
     public class ChangeTime : UnityEvent<float, float> { }
 
-    public class BusinesEntity: IWaitTimer
+    public class BusinesEntity : IWaitTimer
     {
         public ChangeTime ChangeTimeEvent = new ChangeTime();
         public UnityEvent ChangeDataEvent = new UnityEvent();
@@ -55,7 +55,8 @@ namespace Business
 
             if (CurrentTime <= 0)
             {
-                Debug.Log("End time");
+                BoxControllers.GetController<MoneyController>().AddMoney(Revenue);
+                CurrentTime = TimeRevenue;
             }
 
             ChangeTimeEvent?.Invoke(TimeRevenue, CurrentTime);

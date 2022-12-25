@@ -56,6 +56,7 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/1_Scripts/Controllers/MoneyController.cs" />
     <Compile Include="Assets/1_Scripts/UpgradeEntity.cs" />
     <Compile Include="Assets/1_Scripts/UI/Windows/MenuWindow.cs" />
     <Compile Include="Assets/1_Scripts/Types/TypeUISound.cs" />

@@ -155,6 +155,7 @@ MonoBehaviour:
   controllers:
   - {fileID: 11400000, guid: f25b38716e4a1e34e9870811df54cf69, type: 2}
   - {fileID: 11400000, guid: f108f1e8314e7426e8c40b399402bb78, type: 2}
+  - {fileID: 11400000, guid: 13d95b7ae6d9f41ea94304eabc0a8767, type: 2}
 --- !u!4 &10265417
 Transform:
   m_ObjectHideFlags: 0
@@ -648,7 +649,7 @@ MonoBehaviour:
   EndHide:
     m_PersistentCalls:
       m_Calls: []
-  mainBalanceText: {fileID: 532948641}
+  moneyPlayerText: {fileID: 532948641}
   blockBusinessPrefab: {fileID: 7097057996199716858, guid: cd1c84a10ffba493599b52902d005318, type: 3}
   content: {fileID: 1498885031}
 --- !u!1 &777410340
