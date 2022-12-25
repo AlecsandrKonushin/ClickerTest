@@ -1,3 +1,4 @@
+using UI;
 using UnityEngine;
 
 namespace Core
@@ -6,9 +7,18 @@ namespace Core
     {
         [SerializeField] private BaseController[] controllers;
 
-        public void Init()
-        { 
+        public void Init() 
+        {
+            UIManager.Instance.OnInitialize();
+            UIManager.Instance.OnStart();
+
             BoxControllers.Init(controllers);
+        }
+
+        // TODO: DELETE. For test
+        public void Start()
+        {
+            Init();
         }
     }
 }

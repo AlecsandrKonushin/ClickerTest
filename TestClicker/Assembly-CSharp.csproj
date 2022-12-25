@@ -75,6 +75,7 @@
     <Compile Include="Assets/1_Scripts/Controllers/BaseController.cs" />
     <Compile Include="Assets/1_Scripts/Types/TypeMusic.cs" />
     <Compile Include="Assets/1_Scripts/Core/Singleton.cs" />
+    <Compile Include="Assets/1_Scripts/Core/LoadSceneManager.cs" />
     <Compile Include="Assets/1_Scripts/Types/TypeAnimation.cs" />
     <Compile Include="Assets/1_Scripts/Interfaces/IController.cs" />
     <Compile Include="Assets/1_Scripts/Core/AppManager.cs" />
@@ -82,12 +83,12 @@
     <Compile Include="Assets/1_Scripts/UI/Windows/Window.cs" />
     <Compile Include="Assets/1_Scripts/Data/NamesData.cs" />
     <Compile Include="Assets/1_Scripts/UI/Buttons/MyButton.cs" />
+    <Compile Include="Assets/1_Scripts/Interfaces/IWaitTimer.cs" />
     <Compile Include="Assets/1_Scripts/UI/BlockBusinessUi.cs" />
     <Compile Include="Assets/1_Scripts/Controllers/BusinessController.cs" />
-    <Compile Include="Assets/1_Scripts/UI/ScrollController.cs" />
-    <Compile Include="Assets/1_Scripts/Controllers/GameController.cs" />
+    <Compile Include="Assets/1_Scripts/Controllers/TimeManager.cs" />
     <Compile Include="Assets/1_Scripts/UI/Windows/MainWindow.cs" />
-    <Compile Include="Assets/1_Scripts/Core/LoadSceneManager.cs" />
+    <Compile Include="Assets/1_Scripts/Controllers/GameController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

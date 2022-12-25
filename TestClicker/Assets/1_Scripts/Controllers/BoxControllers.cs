@@ -67,7 +67,7 @@ namespace Core
 
         #endregion
 
-        public static T GetManager<T>()
+        public static T GetController<T>()
         {
             object manager;
             data.TryGetValue(typeof(T), out manager);

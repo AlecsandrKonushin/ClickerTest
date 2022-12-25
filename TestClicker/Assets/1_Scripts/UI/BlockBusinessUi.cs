@@ -1,3 +1,4 @@
+using Business;
 using NaughtyAttributes;
 using TMPro;
 using UI.Buttons;
@@ -20,6 +21,32 @@ namespace UI
 
         [BoxGroup("Down block")] private UpgradeButton[] upgradeButtons;
 
+        private BusinesEntity business;
 
+        public void SetData(BusinesEntity businessEntity)
+        {
+            business = businessEntity;
+
+            business.ChangeTimeEvent.AddListener(ChangeValueSlider);
+            business.ChangeDataEvent.AddListener(ChangeData);
+
+            levelUpButton.onClick.AddListener(() => { business.ClickLevelUpButton(); });
+
+            ChangeData();
+        }
+
+        private void ChangeValueSlider(float maxValue, float currentValue)
+        {
+            sliderRevenue.maxValue = maxValue;
+            sliderRevenue.value = currentValue;
+        }
+
+        private void ChangeData()
+        {
+            nameText.text = business.Name;
+            levelText.text = business.Level.ToString();
+            revenueText.text = business.Revenue.ToString();
+            priceLevelUpText.text = business.PriceLevelUp.ToString();
+        }
     }
 }

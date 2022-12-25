@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7850367438249100561}
   - component: {fileID: 6042462514636886507}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: SliderRevenue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -593,6 +593,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1005942707128337483}
+  sliderRevenue: {fileID: 6042462514636886507}
+  levelText: {fileID: 5879982516170751271}
+  revenueText: {fileID: 6546815782375688112}
+  priceLevelUpText: {fileID: 1471744734507306163}
+  levelUpButton: {fileID: 3837886141718509760}
 --- !u!1 &1920526045841912127
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,9 +38,9 @@ namespace UI
 
         #region GET/SHOW/HIDE
 
-        public T GetWindow<T>() where T : Window
+        public static T GetWindow<T>() where T : Window
         {
-            if (windows.TryGetValue(typeof(T), out var window))
+            if (Instance.windows.TryGetValue(typeof(T), out var window))
             {
                 return window as T;
             }
@@ -52,9 +52,9 @@ namespace UI
             }
         }
 
-        public void ShowWindow<T>() where T : Window
+        public static void ShowWindow<T>() where T : Window
         {
-            if(windows.TryGetValue(typeof(T) ,out var window))
+            if(Instance.windows.TryGetValue(typeof(T) ,out var window))
             {
                 window.Show();
 
@@ -65,9 +65,9 @@ namespace UI
             }
         }
 
-        public void HideWindow<T>() where T : Window
+        public static void HideWindow<T>() where T : Window
         {
-            if (windows.TryGetValue(typeof(T), out var window))
+            if (Instance.windows.TryGetValue(typeof(T), out var window))
             {
                 window.Hide();
             }
@@ -77,9 +77,9 @@ namespace UI
             }
         }
 
-        public void ChangeLanguage()
+        public static void ChangeLanguage()
         {
-            foreach (var window in windows)
+            foreach (var window in Instance.windows)
             {
                 window.Value.ChangeLanguage();
             }
