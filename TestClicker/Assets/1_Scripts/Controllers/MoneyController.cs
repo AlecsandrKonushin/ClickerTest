@@ -12,7 +12,7 @@ namespace Core
         [HideInInspector]
         public ChangeMoney ChangeMoneyEvent = new ChangeMoney();
 
-        private int moneyPlayer = 0;
+        private int moneyPlayer = 400;
 
         public void AddMoney(int value)
         {

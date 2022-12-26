@@ -11,7 +11,7 @@ namespace UI.Buttons
         {
             GetComponent<Button>().onClick.AddListener(()=>
             {
-                AudioManager.Instance.PlayUISound(TypeUISound.ButtonClick);
+                //AudioManager.Instance.PlayUISound(TypeUISound.ButtonClick);
                 OnClickButton();
             });
 

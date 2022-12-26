@@ -13,16 +13,18 @@ MonoBehaviour:
   m_Name: BusinessData_2
   m_EditorClassIdentifier: 
   IsBuy: 0
-  Name: "\u0412\u0442\u043E\u0440\u043E\u0439"
+  Name: Two
   TimeRevenue: 6
   BasePrice: 40
   BaseRevenue: 40
   Upgrades:
   - IsBuy: 0
     Id: 0
+    Name: Upgrade 1
     Price: 1200
     FactorRevenue: 100
   - IsBuy: 0
     Id: 1
+    Name: Upgrade 2
     Price: 4000
     FactorRevenue: 200

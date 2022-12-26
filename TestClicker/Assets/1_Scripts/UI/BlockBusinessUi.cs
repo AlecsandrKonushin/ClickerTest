@@ -10,7 +10,7 @@ namespace UI
     public class BlockBusinessUi : MonoBehaviour
     {
         private const string SIGN_PRICE = "$", LEVEL_UP_STRING = "LVL UP", ZERO_PRICE = "0",
-                             PROCENT_SIGN = "%", BUY_STRING = "Buy", IS_BUY_STRING = "Is Buy", PRICE_STRING = "Price";
+                             PROCENT_SIGN = "%", BUY_STRING = "Buy", IS_BUY_STRING = "Is Buy", PRICE_STRING = "Price", REVENUE_STRING = "Revenue";
 
         [BoxGroup("Up block")]
         [SerializeField] private TextMeshProUGUI nameText;
@@ -74,7 +74,7 @@ namespace UI
                 {
                     if(upgrade.Id == upgradeButton.IdUpgrade)
                     {
-                        string factorRevenue = upgrade.FactorRevenue + PROCENT_SIGN;
+                        string factorRevenue = REVENUE_STRING + " " + upgrade.FactorRevenue + PROCENT_SIGN;
                         string price;
 
                         if (upgrade.IsBuy)
@@ -83,7 +83,7 @@ namespace UI
                         }
                         else
                         {
-                            price = PRICE_STRING + upgrade.Price + SIGN_PRICE;
+                            price = PRICE_STRING + " " + upgrade.Price + SIGN_PRICE;
                         }
 
                         upgradeButton.SetViewData(upgrade.Name, factorRevenue, price);

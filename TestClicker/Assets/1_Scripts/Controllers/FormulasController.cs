@@ -8,17 +8,17 @@ namespace Core
     {
         public int GetRevenue(BusinessEntity business)
         {
-            int valueUpgrades = 0;
+            float valueUpgrades = 0;
 
             foreach (var upgrade in business.Upgrades)
             {
                 if (upgrade.IsBuy)
                 {
-                    valueUpgrades += (int)(business.BaseRevenue / 100f * upgrade.FactorRevenue);
+                    valueUpgrades += 1 / 100f * upgrade.FactorRevenue;
                 }
             }
 
-            int revenue = business.Level * business.BasePrice * (1 + valueUpgrades);
+            int revenue = (int)(business.Level * business.BasePrice * (1 + valueUpgrades));
             return revenue;
         }
 
