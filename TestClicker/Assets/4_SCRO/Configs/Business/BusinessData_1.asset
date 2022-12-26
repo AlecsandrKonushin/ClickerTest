@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b46660add0bb443bac0c776b5637d01, type: 3}
   m_Name: BusinessData_1
   m_EditorClassIdentifier: 
+  IsBuy: 1
   Name: "\u041F\u0435\u0440\u0432\u044B\u0439"
   TimeRevenue: 3
   BasePrice: 3
   BaseRevenue: 3
   Upgrades:
-  - Price: 50
+  - IsBuy: 0
+    Id: 0
+    Price: 50
     FactorRevenue: 50
-  - Price: 400
+  - IsBuy: 0
+    Id: 1
+    Price: 400
     FactorRevenue: 100

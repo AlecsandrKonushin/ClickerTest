@@ -9,15 +9,15 @@ namespace Core
     {
         [SerializeField] private BusinessData[] businessesData;
 
-        public BusinesEntity[] Businesses { get; private set; }
+        public BusinessEntity[] Businesses { get; private set; }
 
         public override void OnInitialize()
         {
-            Businesses = new BusinesEntity[businessesData.Length];
+            Businesses = new BusinessEntity[businessesData.Length];
 
             for (int i = 0; i < businessesData.Length; i++)
             {
-                Businesses[i] = new BusinesEntity(businessesData[i]);
+                Businesses[i] = new BusinessEntity(businessesData[i]);
             }
         }
     }

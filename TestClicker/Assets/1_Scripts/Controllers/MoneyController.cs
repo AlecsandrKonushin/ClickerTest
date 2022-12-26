@@ -20,5 +20,17 @@ namespace Core
 
             ChangeMoneyEvent?.Invoke(moneyPlayer);
         }
+
+        public bool CanBuy (int value)
+        {
+            return value <= moneyPlayer;            
+        }
+
+        public void BuyEntity(int value)
+        {
+            moneyPlayer -= value;
+
+            ChangeMoneyEvent?.Invoke(moneyPlayer);
+        }
     }
 }

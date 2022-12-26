@@ -8,31 +8,31 @@ namespace Business
     [System.Serializable]
     public class ChangeTime : UnityEvent<float, float> { }
 
-    public class BusinesEntity : IWaitTimer
+    public class BusinessEntity : IWaitTimer
     {
         public ChangeTime ChangeTimeEvent = new ChangeTime();
         public UnityEvent ChangeDataEvent = new UnityEvent();
 
+        public bool IsBuy { get; private set; }
         public string Name { get; private set; }
         public int Level { get; private set; }
         public int Revenue { get; private set; }
         public int PriceLevelUp { get; private set; }
         public float CurrentTime { get; private set; }
         public float TimeRevenue { get; private set; }
-
-        private int basePrice;
-        private int baseRevenue;
+        public int BasePrice { get; private set; }
+        public int BaseRevenue { get; private set; }
 
         public UpgradeEntity[] Upgrades { get; private set; }
 
-        public BusinesEntity(BusinessData data)
+        public BusinessEntity(BusinessData data)
         {
+            IsBuy = data.IsBuy;
             Name = data.Name;
-            Level = 1;
 
             CurrentTime = TimeRevenue = data.TimeRevenue;
-            PriceLevelUp = basePrice = data.BasePrice;
-            Revenue = baseRevenue = data.BaseRevenue;
+            BasePrice = data.BasePrice;
+            BaseRevenue = data.BaseRevenue;
 
             Upgrades = new UpgradeEntity[data.Upgrades.Length];
 
@@ -41,12 +41,52 @@ namespace Business
                 Upgrades[i] = new UpgradeEntity(data.Upgrades[i]);
             }
 
-            TimeManager.Instance.SubscribeOnTimer(this);
+            if (IsBuy)
+            {
+                TimeManager.Instance.SubscribeOnTimer(this);
+                Level = 1;
+            }
+            else
+            {
+                Level = 0;
+            }
+
+            CountData();
         }
 
         public void ClickLevelUpButton()
         {
+            if (BoxControllers.GetController<MoneyController>().CanBuy(PriceLevelUp))
+            {
+                BoxControllers.GetController<MoneyController>().BuyEntity(PriceLevelUp);
 
+                if (!IsBuy)
+                { 
+                    IsBuy = true;
+                    TimeManager.Instance.SubscribeOnTimer(this);
+                }
+
+                Level++;
+                CountData();
+            }
+        }
+
+        public void ClickUpgradeButton(int id)
+        {
+            foreach (var upgrade in Upgrades)
+            {
+                if (upgrade.Id == id && !upgrade.IsBuy)
+                {
+                    if (BoxControllers.GetController<MoneyController>().CanBuy(upgrade.Price))
+                    {
+                        BoxControllers.GetController<MoneyController>().BuyEntity(upgrade.Price);
+
+                        upgrade.BuyUpgrade();
+
+                        CountData();
+                    }
+                }
+            }
         }
 
         public void TickTimer()
@@ -60,6 +100,14 @@ namespace Business
             }
 
             ChangeTimeEvent?.Invoke(TimeRevenue, CurrentTime);
+        }
+
+        private void CountData()
+        {
+            PriceLevelUp = BoxControllers.GetController<FormulasController>().GetPriceUpLevel(this);
+            Revenue = BoxControllers.GetController<FormulasController>().GetRevenue(this);
+
+            ChangeDataEvent?.Invoke();
         }
     }
 }

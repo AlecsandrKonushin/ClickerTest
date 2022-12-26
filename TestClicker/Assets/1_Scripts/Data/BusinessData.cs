@@ -5,6 +5,7 @@ namespace Data
     [CreateAssetMenu(fileName = "BusinessData", menuName = "Data/BusinessData")]
     public class BusinessData : ScriptableObject
     {
+        public bool IsBuy = false;
         public string Name;
         public float TimeRevenue;
         public int BasePrice;

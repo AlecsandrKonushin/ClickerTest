@@ -90,6 +90,7 @@
     <Compile Include="Assets/1_Scripts/Controllers/TimeManager.cs" />
     <Compile Include="Assets/1_Scripts/UI/Windows/MainWindow.cs" />
     <Compile Include="Assets/1_Scripts/Controllers/GameController.cs" />
+    <Compile Include="Assets/1_Scripts/Controllers/FormulasController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

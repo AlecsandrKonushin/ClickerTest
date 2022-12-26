@@ -23,7 +23,7 @@ namespace UI.Windows
             moneyPlayerText.text = 0 + "$";
         }
 
-        public void ShowBusinessUi(BusinesEntity[] businesses)
+        public void ShowBusinessUi(BusinessEntity[] businesses)
         {
             blockBusinesses = new BlockBusinessUi[businesses.Length];
 
