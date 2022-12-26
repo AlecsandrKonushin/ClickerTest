@@ -17,12 +17,6 @@ namespace UI.Windows
 
         private BlockBusinessUi[] blockBusinesses;
 
-        public override void OnStart()
-        {
-            // TODO: Load money from save
-            moneyPlayerText.text = 0 + "$";
-        }
-
         public void ShowBusinessUi(BusinessEntity[] businesses)
         {
             blockBusinesses = new BlockBusinessUi[businesses.Length];
@@ -30,6 +24,7 @@ namespace UI.Windows
             for (int i = 0; i < businesses.Length; i++)
             {
                 BlockBusinessUi business = Instantiate(blockBusinessPrefab, content.transform);
+
                 business.SetData(businesses[i]);
                 blockBusinesses[i] = business;
             }

@@ -12,25 +12,40 @@ namespace Core
         [HideInInspector]
         public ChangeMoney ChangeMoneyEvent = new ChangeMoney();
 
-        private int moneyPlayer = 400;
+        public int MoneyPlayer { get; private set; }
+
+        public override void OnStart()
+        {
+            if (BoxControllers.GetController<SaveController>().IsHaveSave)
+            {
+                MoneyPlayer = BoxControllers.GetController<SaveController>().GetMoneyPlayer;
+            }
+            else
+            {
+                MoneyPlayer = 0;
+            }
+
+            ChangeMoneyEvent?.Invoke(MoneyPlayer);
+
+        }
 
         public void AddMoney(int value)
         {
-            moneyPlayer += value;
+            MoneyPlayer += value;
 
-            ChangeMoneyEvent?.Invoke(moneyPlayer);
+            ChangeMoneyEvent?.Invoke(MoneyPlayer);
         }
 
         public bool CanBuy (int value)
         {
-            return value <= moneyPlayer;            
+            return value <= MoneyPlayer;            
         }
 
         public void BuyEntity(int value)
         {
-            moneyPlayer -= value;
+            MoneyPlayer -= value;
 
-            ChangeMoneyEvent?.Invoke(moneyPlayer);
+            ChangeMoneyEvent?.Invoke(MoneyPlayer);
         }
     }
 }

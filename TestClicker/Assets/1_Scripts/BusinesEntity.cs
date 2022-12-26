@@ -1,5 +1,6 @@
 using Core;
 using Data;
+using SaveSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -54,6 +55,32 @@ namespace Business
             CountData();
         }
 
+        public BusinessEntity(SaveBusinessData data)
+        {
+            IsBuy = data.IsBuy;
+            Name = data.Name;
+            Level = data.Level;
+
+            CurrentTime = data.CurrentTime;
+            TimeRevenue = data.TimeRevenue;
+            BasePrice = data.BasePrice;
+            BaseRevenue = data.BaseRevenue;
+
+            Upgrades = new UpgradeEntity[data.UpgradesData.Length];
+
+            for (int i = 0; i < data.UpgradesData.Length; i++)
+            {
+                Upgrades[i] = new UpgradeEntity(data.UpgradesData[i]);
+            }
+
+            if (IsBuy)
+            {
+                TimeManager.Instance.SubscribeOnTimer(this);
+            }
+
+            CountData();
+        }
+
         public void ClickLevelUpButton()
         {
             if (BoxControllers.GetController<MoneyController>().CanBuy(PriceLevelUp))
@@ -68,6 +95,8 @@ namespace Business
 
                 Level++;
                 CountData();
+
+                BoxControllers.GetController<SaveController>().Save();
             }
         }
 
@@ -84,6 +113,8 @@ namespace Business
                         upgrade.BuyUpgrade();
 
                         CountData();
+
+                        BoxControllers.GetController<SaveController>().Save();
                     }
                 }
             }
@@ -97,6 +128,8 @@ namespace Business
             {
                 BoxControllers.GetController<MoneyController>().AddMoney(Revenue);
                 CurrentTime = TimeRevenue;
+
+                BoxControllers.GetController<SaveController>().Save();
             }
 
             ChangeTimeEvent?.Invoke(TimeRevenue, CurrentTime);

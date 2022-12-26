@@ -1,4 +1,5 @@
 using Data;
+using SaveSystem;
 
 namespace Business
 {
@@ -13,6 +14,15 @@ namespace Business
         public UpgradeEntity(UpgradeData data)
         {
             IsBuy = false;
+            Id = data.Id;
+            Name = data.Name;
+            Price = data.Price;
+            FactorRevenue = data.FactorRevenue;
+        }
+
+        public UpgradeEntity(SaveUpgradeData data)
+        {
+            IsBuy = data.IsBuy;
             Id = data.Id;
             Name = data.Name;
             Price = data.Price;

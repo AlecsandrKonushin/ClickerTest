@@ -9,7 +9,6 @@ namespace Core
     {        
         public override void OnStart()
         {
-            UIManager.GetWindow<MainWindow>().ShowBusinessUi(BoxControllers.GetController<BusinessController>().Businesses);
         }        
     }
 }

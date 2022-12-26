@@ -59,6 +59,7 @@
     <Compile Include="Assets/1_Scripts/Controllers/MoneyController.cs" />
     <Compile Include="Assets/1_Scripts/UpgradeEntity.cs" />
     <Compile Include="Assets/1_Scripts/UI/Windows/MenuWindow.cs" />
+    <Compile Include="Assets/1_Scripts/Data/SaveBusinessData.cs" />
     <Compile Include="Assets/1_Scripts/Types/TypeUISound.cs" />
     <Compile Include="Assets/1_Scripts/Data/BusinessData.cs" />
     <Compile Include="Assets/1_Scripts/UI/Buttons/CloseButton.cs" />
@@ -67,20 +68,24 @@
     <Compile Include="Assets/1_Scripts/Interfaces/IInitialize.cs" />
     <Compile Include="Assets/1_Scripts/Managers/LogManager.cs" />
     <Compile Include="Assets/1_Scripts/UI/Buttons/UpgradeButton.cs" />
+    <Compile Include="Assets/1_Scripts/Controllers/SaveController.cs" />
     <Compile Include="Assets/1_Scripts/Core/Coroutines.cs" />
     <Compile Include="Assets/1_Scripts/Managers/UIManager.cs" />
     <Compile Include="Assets/1_Scripts/Managers/AudioManager.cs" />
     <Compile Include="Assets/1_Scripts/BusinesEntity.cs" />
     <Compile Include="Assets/1_Scripts/Data/UpgradeData.cs" />
+    <Compile Include="Assets/1_Scripts/Data/SaveUpgradeData.cs" />
     <Compile Include="Assets/1_Scripts/Core/DontDestroy.cs" />
     <Compile Include="Assets/1_Scripts/Controllers/BaseController.cs" />
     <Compile Include="Assets/1_Scripts/Types/TypeMusic.cs" />
     <Compile Include="Assets/1_Scripts/Core/Singleton.cs" />
     <Compile Include="Assets/1_Scripts/Core/LoadSceneManager.cs" />
+    <Compile Include="Assets/1_Scripts/Controllers/FormulasController.cs" />
     <Compile Include="Assets/1_Scripts/Types/TypeAnimation.cs" />
     <Compile Include="Assets/1_Scripts/Interfaces/IController.cs" />
     <Compile Include="Assets/1_Scripts/Core/AppManager.cs" />
     <Compile Include="Assets/1_Scripts/Core/StarterScene.cs" />
+    <Compile Include="Assets/1_Scripts/Data/SaveData.cs" />
     <Compile Include="Assets/1_Scripts/UI/Windows/Window.cs" />
     <Compile Include="Assets/1_Scripts/Data/NamesData.cs" />
     <Compile Include="Assets/1_Scripts/UI/Buttons/MyButton.cs" />
@@ -90,7 +95,6 @@
     <Compile Include="Assets/1_Scripts/Controllers/TimeManager.cs" />
     <Compile Include="Assets/1_Scripts/UI/Windows/MainWindow.cs" />
     <Compile Include="Assets/1_Scripts/Controllers/GameController.cs" />
-    <Compile Include="Assets/1_Scripts/Controllers/FormulasController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
