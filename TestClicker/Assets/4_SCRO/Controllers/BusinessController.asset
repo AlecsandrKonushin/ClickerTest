@@ -15,3 +15,6 @@ MonoBehaviour:
   businessesData:
   - {fileID: 11400000, guid: 607f075dcdf034a32bf445ca564c60e6, type: 2}
   - {fileID: 11400000, guid: 8128d540467d44422b9f38732161c857, type: 2}
+  - {fileID: 11400000, guid: 0135fa60fd0ce451395c20730c55c5cf, type: 2}
+  - {fileID: 11400000, guid: 950a8a190799f405384da66f31177d5e, type: 2}
+  - {fileID: 11400000, guid: 9eee2055c5aa843d98e0c39dfab0e0ac, type: 2}
